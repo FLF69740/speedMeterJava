@@ -11,7 +11,7 @@ public class StopActivity extends BaseActivity {
     }
 
     @Override
-    public void speedAction(short result) {
+    public void subscriberAction(short speedResult) {
 
     }
 }
