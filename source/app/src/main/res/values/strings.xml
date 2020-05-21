@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">SpeedJava</string>
+    <string name="default_number">0</string>
+    <string name="kmh">Km/h</string>
+
+    <string name="activity_1_title">Screen 1 : j\'avance</string>
 </resources>
