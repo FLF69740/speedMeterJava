@@ -9,8 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.androidnative.speedjava.R;
-
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -34,7 +32,7 @@ public class RunFragment extends Fragment {
         return view;
     }
 
-    public void updateUI(String speed, String average){
+    void updateUI(String speed, String average){
         mSpeed.setText(speed);
         mAverage.setText(average);
     }
