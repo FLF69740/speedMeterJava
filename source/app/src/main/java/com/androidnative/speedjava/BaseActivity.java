@@ -10,6 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.Fragment;
+
 import android.location.LocationListener;
 import android.os.CountDownTimer;
 import android.widget.Toast;
@@ -29,6 +31,7 @@ public abstract class BaseActivity extends AppCompatActivity implements Location
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayout());
+        configureFragment(savedInstanceState);
         doLocate();
         bodyActivity();
 
@@ -45,6 +48,14 @@ public abstract class BaseActivity extends AppCompatActivity implements Location
         }.start();
     }
 
+    private void configureFragment(Bundle bundle){
+        if (bundle == null){
+            getSupportFragmentManager().beginTransaction()
+                    .add(getFragmentLayout(), getFragment(), getFragmentTag())
+                    .commit();
+        }
+    }
+
     /**
      *  ABSTRACT METHOD
      */
@@ -52,6 +63,9 @@ public abstract class BaseActivity extends AppCompatActivity implements Location
     public abstract int getLayout();
     public abstract void bodyActivity();
     public abstract void subscriberAction(short speedResult);
+    public abstract int getFragmentLayout();
+    public abstract Fragment getFragment();
+    public abstract String getFragmentTag();
 
     /**
      *  LOCATION MANAGER

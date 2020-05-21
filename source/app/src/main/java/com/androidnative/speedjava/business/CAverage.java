@@ -2,9 +2,9 @@ package com.androidnative.speedjava.business;
 
 public class CAverage {
 
-   private double mAverage;
-   private short mValue;
-   private int mCounter;
+    private double mAverage;
+    private short mValue;
+    private int mCounter;
 
     public CAverage() {
         mAverage = 0;
@@ -30,6 +30,7 @@ public class CAverage {
     }
 
     public String getResult(){
-        return mValue + " - " + mCounter + " - " + mAverage;
+        return mCounter + " - " + mAverage;
     }
+
 }
